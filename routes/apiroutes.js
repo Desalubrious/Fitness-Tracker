@@ -3,7 +3,7 @@ const db = require('../models');
 module.exports = function(app) {
     // Pull up info for workouts
     app.get('/api/workouts', (req, res) => {
-        db.Workout.findAll().then(dbWorkout => {
+        db.Workout.find({}).then(dbWorkout => {
             res.send(dbWorkout);
         })
         .catch(err => {
